@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['setcolor_0',['setColor',['../class_status_led.html#ae4cf3fa9a9273203525717aee802d06c',1,'StatusLed']]],
-  ['setcolorstyle_1',['setColorStyle',['../class_status_led.html#ad98bea4f2029b2fa68cbbc64eb7f8c9c',1,'StatusLed']]],
-  ['setoverridestyle_2',['setOverrideStyle',['../class_status_led.html#a343cce8976b4616ff437603be0cadc38',1,'StatusLed']]],
-  ['setup_3',['setup',['../class_status_led.html#a6912a0677df3003a7284190a0f339c77',1,'StatusLed']]],
-  ['setup2_4',['setup2',['../class_status_led.html#a83dc7345b43e1b19f63abd4993009eae',1,'StatusLed::setup2()'],['../class_status_led_r_g_b.html#a93eacf87226dd3d35364ee507690a325',1,'StatusLedRGB::setup2()']]],
-  ['show_5',['show',['../class_status_led.html#a89994361e2dfd6926a1bc6adc97c988b',1,'StatusLed::show()'],['../class_status_led_r_g_b.html#ae3dcaa6a5a42d383da24192a1e252ff4',1,'StatusLedRGB::show()']]],
-  ['statusled_6',['StatusLed',['../class_status_led.html#a0d8f7a163a86e3969df72ce702d7588f',1,'StatusLed::StatusLed(size_t numPixels)'],['../class_status_led.html#aa695c1ba16725f420b0593476875e599',1,'StatusLed::StatusLed(const StatusLed &amp;)=delete']]],
-  ['statusledrgb_7',['StatusLedRGB',['../class_status_led_r_g_b.html#a5fefc74223ed7d946d73a3f587eda6e0',1,'StatusLedRGB']]]
+  ['setcolor_0',['setColor',['../class_status_led_r_k.html#a1e36e27471b588914db65b640dfae450',1,'StatusLedRK']]],
+  ['setcolorstyle_1',['setColorStyle',['../class_status_led_r_k.html#ab3395f6cc3df3d96ed4b6dce80407327',1,'StatusLedRK']]],
+  ['setoverridestyle_2',['setOverrideStyle',['../class_status_led_r_k.html#aec628920b4136dbb6211cb118355f896',1,'StatusLedRK']]],
+  ['setup_3',['setup',['../class_status_led_r_k.html#a3793fc1e0606f5f70d410738c2d237f9',1,'StatusLedRK']]],
+  ['setup2_4',['setup2',['../class_status_led_r_k.html#a7ca080c685652a8a9f1192464e4f30de',1,'StatusLedRK::setup2()'],['../class_status_led_r_k___r_g_b.html#a5312e083f05917377ce98143a6a913bd',1,'StatusLedRK_RGB::setup2()']]],
+  ['show_5',['show',['../class_status_led_r_k.html#a26ff86732405305af3326b7957239e15',1,'StatusLedRK::show()'],['../class_status_led_r_k___r_g_b.html#a68cac09035e139847d036b9a3cdf9c50',1,'StatusLedRK_RGB::show()']]],
+  ['statusledrk_6',['StatusLedRK',['../class_status_led_r_k.html#a501fc7c36ba2083dd2581034dcc8fbbc',1,'StatusLedRK::StatusLedRK(size_t numPixels)'],['../class_status_led_r_k.html#a65879277d6984b75c4a6b9bdfde0decb',1,'StatusLedRK::StatusLedRK(const StatusLedRK &amp;)=delete']]],
+  ['statusledrk_5frgb_7',['StatusLedRK_RGB',['../class_status_led_r_k___r_g_b.html#a82d172d572437e90c716e45c957cc510',1,'StatusLedRK_RGB']]]
 ];

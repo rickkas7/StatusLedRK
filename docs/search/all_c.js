@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['updateloopcheckenabled_0',['updateLoopCheckEnabled',['../class_status_led.html#a3e78f476c7c44005d12f527b6c1b583f',1,'StatusLed']]]
+  ['updateloopcheckenabled_0',['updateLoopCheckEnabled',['../class_status_led_r_k.html#a2dc634da5e74fc77dd6cd5c2bd29d750',1,'StatusLedRK']]]
 ];

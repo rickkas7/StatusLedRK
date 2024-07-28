@@ -11,7 +11,7 @@
  * This works with LEDs connected by various technologies by using different subclasses.
  * For example: LEDs connected to PWM pins and NeoPixels.
  */
-class StatusLed {
+class StatusLedRK {
 public:
     /**
      * @brief Structure that keeps the state of a pixel.
@@ -41,10 +41,10 @@ public:
      * @param numPixels 
      * 
      * You can't instantiate one of these directly as it's pure virtual. You must instantiate one 
-     * of the concrete subclasses like StatusLedRGB instead.
+     * of the concrete subclasses like StatusLedRK_RGB instead.
      */
-    StatusLed(size_t numPixels);
-    virtual ~StatusLed();
+    StatusLedRK(size_t numPixels);
+    virtual ~StatusLedRK();
 
     /**
      * @brief This must be called from application setup().
@@ -74,7 +74,7 @@ public:
      * subclasses should override setup2() instead of setup() to avoid disrupting the
      * required calls in setup().
      * 
-     * For example, StatusLedRGB uses setup2() to set the pinMode of the RGB pins.
+     * For example, StatusLedRK_RGB uses setup2() to set the pinMode of the RGB pins.
      */
     virtual void setup2() {};
 
@@ -165,12 +165,12 @@ protected:
     /**
      * This class cannot be copied
      */
-    StatusLed(const StatusLed&) = delete;
+    StatusLedRK(const StatusLedRK&) = delete;
 
     /**
      * This class cannot be copied
      */
-    StatusLed& operator=(const StatusLed&) = delete;
+    StatusLedRK& operator=(const StatusLedRK&) = delete;
 
 protected:
     size_t numPixels = 0; //!< Number of pixels, set during construction.
@@ -182,7 +182,7 @@ protected:
 /**
  * @brief Class for status LED connected to PWM pins
  */
-class StatusLedRGB : public StatusLed {
+class StatusLedRK_RGB : public StatusLedRK {
 public:
     /**
      * @brief Structure that defines the pins used for red, green, and blue of an RGB LED
@@ -201,12 +201,12 @@ public:
      * @param pinsArray The pinsArray is typically a const global structure. This is not copied! 
      * @param isCommonAnode true for common anode (common pin connected to VCC) or false for common cathode (common pin connected to GND)
      */
-	StatusLedRGB(size_t numPixels, const LedPins *pinsArray, bool isCommonAnode = true);
+	StatusLedRK_RGB(size_t numPixels, const LedPins *pinsArray, bool isCommonAnode = true);
 
     /**
      * @brief Destructor
      */
-	virtual ~StatusLedRGB();
+	virtual ~StatusLedRK_RGB();
 
     /**
      * @brief Sets the pinMode of the LED pins. Called from setup().
@@ -214,7 +214,7 @@ public:
 	virtual void setup2();
 
     /**
-     * @brief Update the RGB LED to match the state in the StatusLed object
+     * @brief Update the RGB LED to match the state in the StatusLedRK object
      */
 	virtual void show();
 

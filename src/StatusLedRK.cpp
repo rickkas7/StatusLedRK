@@ -1,10 +1,10 @@
 #include "StatusLedRK.h"
 
 
-StatusLed::StatusLed(size_t numPixels) : numPixels(numPixels) {
+StatusLedRK::StatusLedRK(size_t numPixels) : numPixels(numPixels) {
 }
 
-StatusLed::~StatusLed() {
+StatusLedRK::~StatusLedRK() {
     if (state) {
         delete[] state;
     }
@@ -13,7 +13,7 @@ StatusLed::~StatusLed() {
     }
 }
 
-void StatusLed::setup() {
+void StatusLedRK::setup() {
     state = new PixelState[numPixels];
     overrides = new LedOverride[numPixels];
 
@@ -30,7 +30,7 @@ void StatusLed::setup() {
 }
 
 
-void StatusLed::loop() {
+void StatusLedRK::loop() {
     bool doShow = false;
 
     if (loopCheckEnabled) {
@@ -75,7 +75,7 @@ void StatusLed::loop() {
 }
 
 
-uint32_t StatusLed::getColorWithOverride(uint16_t n)  {
+uint32_t StatusLedRK::getColorWithOverride(uint16_t n)  {
 
     PixelState *curState = &state[n];
 
@@ -99,11 +99,11 @@ uint32_t StatusLed::getColorWithOverride(uint16_t n)  {
     }
 }
 
-void StatusLed::setColor(uint16_t n, uint32_t color, bool showNow) {
+void StatusLedRK::setColor(uint16_t n, uint32_t color, bool showNow) {
     setColorStyle(n, color, STYLE_ON, showNow);
 }
 
-void StatusLed::setColorStyle(uint16_t n, uint32_t color, uint8_t style, bool showNow) {
+void StatusLedRK::setColorStyle(uint16_t n, uint32_t color, uint8_t style, bool showNow) {
     state[n].color = color;
     state[n].style = style;
 
@@ -123,7 +123,7 @@ void StatusLed::setColorStyle(uint16_t n, uint32_t color, uint8_t style, bool sh
 }
 
 
-void StatusLed::setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsigned long howLong, bool clearOnChange) {
+void StatusLedRK::setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsigned long howLong, bool clearOnChange) {
     overrides[n].startMillis = millis();
     overrides[n].timeMs = howLong;
     overrides[n].state.color = color;
@@ -138,7 +138,7 @@ void StatusLed::setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsi
 
 }
 
-bool StatusLed::checkForOverrideChange() {
+bool StatusLedRK::checkForOverrideChange() {
     bool overrideChange = false;
 
     for(size_t ii = 0; ii < numPixels; ii++) {
@@ -155,7 +155,7 @@ bool StatusLed::checkForOverrideChange() {
     return overrideChange;
 }
 
-void StatusLed::updateLoopCheckEnabled() {
+void StatusLedRK::updateLoopCheckEnabled() {
     loopCheckEnabled = false;
 
     for(size_t ii = 0; ii < numPixels; ii++) {
@@ -172,13 +172,13 @@ void StatusLed::updateLoopCheckEnabled() {
 }
 
 
-StatusLedRGB::StatusLedRGB(size_t numPixels, const LedPins *pinsArray, bool isCommonAnode) : StatusLed(numPixels), pinsArray(pinsArray), isCommonAnode(isCommonAnode) {
+StatusLedRK_RGB::StatusLedRK_RGB(size_t numPixels, const LedPins *pinsArray, bool isCommonAnode) : StatusLedRK(numPixels), pinsArray(pinsArray), isCommonAnode(isCommonAnode) {
 }
 
-StatusLedRGB::~StatusLedRGB() {
+StatusLedRK_RGB::~StatusLedRK_RGB() {
 }
 
-void StatusLedRGB::setup2() {
+void StatusLedRK_RGB::setup2() {
 
     for(size_t ii = 0; ii < numPixels; ii++) {
         pinMode(pinsArray[ii].rPin, OUTPUT);
@@ -189,7 +189,7 @@ void StatusLedRGB::setup2() {
 }
 
 
-void StatusLedRGB::show()  {
+void StatusLedRK_RGB::show()  {
     for(uint16_t ii = 0; ii < numPixels; ii++) {
         uint32_t color = getColorWithOverride(ii);
         uint8_t red = (uint8_t) (color >> 16);

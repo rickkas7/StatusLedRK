@@ -1,0 +1,319 @@
+\doxysection{Status\+Led\+RK Class Reference}
+\hypertarget{class_status_led_r_k}{}\label{class_status_led_r_k}\index{StatusLedRK@{StatusLedRK}}
+
+
+Class for managing one or more status LEDs.  
+
+
+
+
+{\ttfamily \#include $<$Status\+Led\+RK.\+h$>$}
+
+Inheritance diagram for Status\+Led\+RK\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_status_led_r_k}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_status_led_r_k_1_1_led_override}{Led\+Override}}
+\begin{DoxyCompactList}\small\item\em Structure used to temporarily override the status LED color. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_status_led_r_k_1_1_pixel_state}{Pixel\+State}}
+\begin{DoxyCompactList}\small\item\em Structure that keeps the state of a pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_status_led_r_k_a501fc7c36ba2083dd2581034dcc8fbbc}{Status\+Led\+RK}} (size\+\_\+t \mbox{\hyperlink{class_status_led_r_k_a263d5dd169ff188787b763b4750d6200}{num\+Pixels}})
+\begin{DoxyCompactList}\small\item\em Constructor of the base class. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}\label{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9} 
+virtual void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em This must be called from application \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8}{loop}} ()
+\begin{DoxyCompactList}\small\item\em This must be called from application \doxylink{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8}{loop()}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_r_k_a26ff86732405305af3326b7957239e15}{show}} ()=0
+\begin{DoxyCompactList}\small\item\em Update the hardware to match the current pixel state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_r_k_a7ca080c685652a8a9f1192464e4f30de}{setup2}} ()
+\begin{DoxyCompactList}\small\item\em Subclasses can override this to do setup. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_status_led_r_k_a57f55abbf8f7ea942f9c2fa5f4613e79}{get\+Color\+With\+Override}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Get the color of the specified pixel, taking into account overrides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_r_k_a1e36e27471b588914db65b640dfae450}{set\+Color}} (uint16\+\_\+t n, uint32\+\_\+t color, bool show\+Now=true)
+\begin{DoxyCompactList}\small\item\em Set the color of a pixel (solid color, not blinking) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_r_k_ab3395f6cc3df3d96ed4b6dce80407327}{set\+Color\+Style}} (uint16\+\_\+t n, uint32\+\_\+t color, uint8\+\_\+t style, bool show\+Now=true)
+\begin{DoxyCompactList}\small\item\em Set the color and style of a pixel. This can be used for solid or blinking colors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_r_k_aec628920b4136dbb6211cb118355f896}{set\+Override\+Style}} (uint16\+\_\+t n, uint32\+\_\+t color, uint8\+\_\+t style, unsigned long how\+Long, bool clear\+On\+Change=true)
+\begin{DoxyCompactList}\small\item\em Temporarily override the color and style of a pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_status_led_r_k_a48d3071751b91901281ebaddeba6604b}\label{class_status_led_r_k_a48d3071751b91901281ebaddeba6604b} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+BLACK} = 0x000000
+\begin{DoxyCompactList}\small\item\em Off (0,0,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a0a724f9817ad2793e485fd39fff0a303}\label{class_status_led_r_k_a0a724f9817ad2793e485fd39fff0a303} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+WHITE} = 0x\+FFFFFF
+\begin{DoxyCompactList}\small\item\em Fully on white (255,255,255) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a60b01aa9ac3176e021bdda42de55b0df}\label{class_status_led_r_k_a60b01aa9ac3176e021bdda42de55b0df} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+RED} = 0x\+FF0000
+\begin{DoxyCompactList}\small\item\em Red (255,0,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_af4cf9971de09a744aaff5e20b6361582}\label{class_status_led_r_k_af4cf9971de09a744aaff5e20b6361582} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+LIME} = 0x00\+FF00
+\begin{DoxyCompactList}\small\item\em Light green (see also LED\+\_\+\+GREEN which is fully on) (0,255,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a4bd5dffa755e20218af3d56c791cfadb}\label{class_status_led_r_k_a4bd5dffa755e20218af3d56c791cfadb} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+BLUE} = 0x0000\+FF
+\begin{DoxyCompactList}\small\item\em Blue (0,0,255) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a92f7399255c11047c71bdc2bce8b11e2}\label{class_status_led_r_k_a92f7399255c11047c71bdc2bce8b11e2} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+YELLOW} = 0x\+FFFF00
+\begin{DoxyCompactList}\small\item\em Yellow (255,255,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a1d9f70d171f9b47b0eb27c5c217b18f2}\label{class_status_led_r_k_a1d9f70d171f9b47b0eb27c5c217b18f2} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+CYAN} = 0x00\+FFFF
+\begin{DoxyCompactList}\small\item\em Cyan (see also LED\+\_\+\+TEAL which is a less-\/bright cyan) (0,255,255) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_ad8e7ef5805f3f360932025c7d911ab5a}\label{class_status_led_r_k_ad8e7ef5805f3f360932025c7d911ab5a} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+MAGENTA} = 0x\+FF00\+FF
+\begin{DoxyCompactList}\small\item\em Magenta (255,0,255) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a1b66126077a830b7f6d3ff9864a469fc}\label{class_status_led_r_k_a1b66126077a830b7f6d3ff9864a469fc} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+SILVER} = 0x\+C0\+C0\+C0
+\begin{DoxyCompactList}\small\item\em Less bright white (192,192,192) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a4fd8f48a298816a9a6a12fb6c38f2533}\label{class_status_led_r_k_a4fd8f48a298816a9a6a12fb6c38f2533} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+GRAY} = 0x808080
+\begin{DoxyCompactList}\small\item\em Even less bright white (128,128,128) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a05ca90867ad5fda4997d943702f04392}\label{class_status_led_r_k_a05ca90867ad5fda4997d943702f04392} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+MAROON} = 0x800000
+\begin{DoxyCompactList}\small\item\em Less bright magenta (128,0,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a313a94e47201e3d048ab86d94f60b752}\label{class_status_led_r_k_a313a94e47201e3d048ab86d94f60b752} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+OLIVE} = 0x808000
+\begin{DoxyCompactList}\small\item\em Less bright yellow (128,128,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_ae94831e471a86d5c4f6ced860e63e9ea}\label{class_status_led_r_k_ae94831e471a86d5c4f6ced860e63e9ea} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+GREEN} = 0x008000
+\begin{DoxyCompactList}\small\item\em Less bright than lime (0,128,0) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a9a5674912045537a2b4e2e5b20ec307f}\label{class_status_led_r_k_a9a5674912045537a2b4e2e5b20ec307f} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+PURPLE} = 0x800080
+\begin{DoxyCompactList}\small\item\em Less bright than magenta (128,0,128) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a1e3ede0fd763ff68d117add1885ed7d2}\label{class_status_led_r_k_a1e3ede0fd763ff68d117add1885ed7d2} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+TEAL} = 0x008080
+\begin{DoxyCompactList}\small\item\em Less bright than cyan (0,128,128) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_ae9eba92b9b9ff8c5615124a30fe48af1}\label{class_status_led_r_k_ae9eba92b9b9ff8c5615124a30fe48af1} 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+NAVY} = 0x000080
+\begin{DoxyCompactList}\small\item\em Less bright than blue (0,0,128) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a6d127d6fbc0d90bb349b70fbc68e8cdd}\label{class_status_led_r_k_a6d127d6fbc0d90bb349b70fbc68e8cdd} 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+ON} = 0
+\begin{DoxyCompactList}\small\item\em On solid. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a77cc2ecd112675258f747c75f474f932}\label{class_status_led_r_k_a77cc2ecd112675258f747c75f474f932} 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+BLINK\+\_\+\+SLOW} = 1
+\begin{DoxyCompactList}\small\item\em Slowly blinking (1/2 Hz, 1000 ms per state) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_abe05b0aaf644bc6c076fd25a88bbfaa7}\label{class_status_led_r_k_abe05b0aaf644bc6c076fd25a88bbfaa7} 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+BLINK\+\_\+\+FAST} = 2
+\begin{DoxyCompactList}\small\item\em Fast blinking (2 Hz, 250 ms per state) \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_acad8c239a0a1d76c9a27be1079277c49}\label{class_status_led_r_k_acad8c239a0a1d76c9a27be1079277c49} 
+static const unsigned long {\bfseries FAST\+\_\+\+BLINK\+\_\+\+MS} = 250
+\begin{DoxyCompactList}\small\item\em Milliseconds for STYLE\+\_\+\+BLINK\+\_\+\+FAST. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a1ad5b97910638c003c18377dbd1e8d96}\label{class_status_led_r_k_a1ad5b97910638c003c18377dbd1e8d96} 
+static const unsigned long {\bfseries SLOW\+\_\+\+BLINK\+\_\+\+MS} = 1000
+\begin{DoxyCompactList}\small\item\em Milliseconds for STYLE\+\_\+\+BLINK\+\_\+\+SLOW. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_status_led_r_k_a4228cfbac31444e67b55cafbea44a279}{check\+For\+Override\+Change}} ()
+\begin{DoxyCompactList}\small\item\em Used internally to see if there is an override change and the pixels need to be updated. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a2dc634da5e74fc77dd6cd5c2bd29d750}\label{class_status_led_r_k_a2dc634da5e74fc77dd6cd5c2bd29d750} 
+void {\bfseries update\+Loop\+Check\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Used internally to update the loop\+Check\+Enabled flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_status_led_r_k_a65879277d6984b75c4a6b9bdfde0decb}{Status\+Led\+RK}} (const \mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \&)=delete
+\item 
+\mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \& \mbox{\hyperlink{class_status_led_r_k_a5d9c11fe271612bec001352e2ba48980}{operator=}} (const \mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \&)=delete
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_status_led_r_k_a263d5dd169ff188787b763b4750d6200}\label{class_status_led_r_k_a263d5dd169ff188787b763b4750d6200} 
+size\+\_\+t {\bfseries num\+Pixels} = 0
+\begin{DoxyCompactList}\small\item\em Number of pixels, set during construction. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a147d3b270c60cf0a5ab309f37ee5bc59}\label{class_status_led_r_k_a147d3b270c60cf0a5ab309f37ee5bc59} 
+\mbox{\hyperlink{struct_status_led_r_k_1_1_pixel_state}{Pixel\+State}} \texorpdfstring{$\ast$}{*} {\bfseries state} = 0
+\begin{DoxyCompactList}\small\item\em Array of \doxylink{struct_status_led_r_k_1_1_pixel_state}{Pixel\+State} structures, one per pixel. Allocated during \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a147dd12b4c8944d019379c9715c3b2c2}\label{class_status_led_r_k_a147dd12b4c8944d019379c9715c3b2c2} 
+\mbox{\hyperlink{struct_status_led_r_k_1_1_led_override}{Led\+Override}} \texorpdfstring{$\ast$}{*} {\bfseries overrides} = 0
+\begin{DoxyCompactList}\small\item\em Array of \doxylink{struct_status_led_r_k_1_1_led_override}{Led\+Override} structures, one per pixels. Allocated during \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()}. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_k_a89bf221118b5b77746c4d8e4fb06f971}\label{class_status_led_r_k_a89bf221118b5b77746c4d8e4fb06f971} 
+bool {\bfseries loop\+Check\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em Internal flag used to determine whether the pixels should be checked on calls to loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for managing one or more status LEDs. 
+
+This works with LEDs connected by various technologies by using different subclasses. For example\+: LEDs connected to PWM pins and Neo\+Pixels. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_status_led_r_k_a501fc7c36ba2083dd2581034dcc8fbbc}\label{class_status_led_r_k_a501fc7c36ba2083dd2581034dcc8fbbc} 
+\index{StatusLedRK@{StatusLedRK}!StatusLedRK@{StatusLedRK}}
+\index{StatusLedRK@{StatusLedRK}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{StatusLedRK()}{StatusLedRK()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Status\+Led\+RK\+::\+Status\+Led\+RK (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Pixels }\end{DoxyParamCaption})}
+
+
+
+Constructor of the base class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Pixels} & \\
+\hline
+\end{DoxyParams}
+You can\textquotesingle{}t instantiate one of these directly as it\textquotesingle{}s pure virtual. You must instantiate one of the concrete subclasses like \doxylink{class_status_led_r_k___r_g_b}{Status\+Led\+RK\+\_\+\+RGB} instead. \Hypertarget{class_status_led_r_k_a65879277d6984b75c4a6b9bdfde0decb}\label{class_status_led_r_k_a65879277d6984b75c4a6b9bdfde0decb} 
+\index{StatusLedRK@{StatusLedRK}!StatusLedRK@{StatusLedRK}}
+\index{StatusLedRK@{StatusLedRK}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{StatusLedRK()}{StatusLedRK()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Status\+Led\+RK\+::\+Status\+Led\+RK (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+This class cannot be copied 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_status_led_r_k_a4228cfbac31444e67b55cafbea44a279}\label{class_status_led_r_k_a4228cfbac31444e67b55cafbea44a279} 
+\index{StatusLedRK@{StatusLedRK}!checkForOverrideChange@{checkForOverrideChange}}
+\index{checkForOverrideChange@{checkForOverrideChange}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{checkForOverrideChange()}{checkForOverrideChange()}}
+{\footnotesize\ttfamily bool Status\+Led\+RK\+::check\+For\+Override\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Used internally to see if there is an override change and the pixels need to be updated. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+\Hypertarget{class_status_led_r_k_a57f55abbf8f7ea942f9c2fa5f4613e79}\label{class_status_led_r_k_a57f55abbf8f7ea942f9c2fa5f4613e79} 
+\index{StatusLedRK@{StatusLedRK}!getColorWithOverride@{getColorWithOverride}}
+\index{getColorWithOverride@{getColorWithOverride}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{getColorWithOverride()}{getColorWithOverride()}}
+{\footnotesize\ttfamily uint32\+\_\+t Status\+Led\+RK\+::get\+Color\+With\+Override (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Get the color of the specified pixel, taking into account overrides. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Pixel number (0 is the first pixel) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint32\+\_\+t RGB color. See constants like COLOR\+\_\+\+RED, below. 
+\end{DoxyReturn}
+\Hypertarget{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8}\label{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8} 
+\index{StatusLedRK@{StatusLedRK}!loop@{loop}}
+\index{loop@{loop}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{loop()}{loop()}}
+{\footnotesize\ttfamily void Status\+Led\+RK\+::loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This must be called from application \doxylink{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8}{loop()}. 
+
+The LEDs are only updated during \doxylink{class_status_led_r_k_a8149f715220a576e40db88e01770e1b8}{loop()}, so you should call this as frequently as possible. It\textquotesingle{}s efficient so it won\textquotesingle{}t update the hardware when the pixels do not change. \Hypertarget{class_status_led_r_k_a5d9c11fe271612bec001352e2ba48980}\label{class_status_led_r_k_a5d9c11fe271612bec001352e2ba48980} 
+\index{StatusLedRK@{StatusLedRK}!operator=@{operator=}}
+\index{operator=@{operator=}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \& Status\+Led\+RK\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_status_led_r_k}{Status\+Led\+RK}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [delete]}}
+
+This class cannot be copied \Hypertarget{class_status_led_r_k_a1e36e27471b588914db65b640dfae450}\label{class_status_led_r_k_a1e36e27471b588914db65b640dfae450} 
+\index{StatusLedRK@{StatusLedRK}!setColor@{setColor}}
+\index{setColor@{setColor}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Status\+Led\+RK\+::set\+Color (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n,  }\item[{uint32\+\_\+t}]{color,  }\item[{bool}]{show\+Now = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Set the color of a pixel (solid color, not blinking) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Pixel number (0 is the first pixel) \\
+\hline
+{\em color} & RGB color (uint32\+\_\+t). See constants like COLOR\+\_\+\+RED, below. \\
+\hline
+{\em show\+Now} & true to show the pixel immediately, or false to wait\\
+\hline
+\end{DoxyParams}
+If you are using a Neo\+Pixel string, it may make sense to pass false to show\+Now and call \doxylink{class_status_led_r_k_a26ff86732405305af3326b7957239e15}{show()} later if you are updating multiple pixels at the same time, for example. \Hypertarget{class_status_led_r_k_ab3395f6cc3df3d96ed4b6dce80407327}\label{class_status_led_r_k_ab3395f6cc3df3d96ed4b6dce80407327} 
+\index{StatusLedRK@{StatusLedRK}!setColorStyle@{setColorStyle}}
+\index{setColorStyle@{setColorStyle}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{setColorStyle()}{setColorStyle()}}
+{\footnotesize\ttfamily void Status\+Led\+RK\+::set\+Color\+Style (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t}]{style,  }\item[{bool}]{show\+Now = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Set the color and style of a pixel. This can be used for solid or blinking colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Pixel number (0 is the first pixel) \\
+\hline
+{\em color} & RGB color (uint32\+\_\+t). See constants like COLOR\+\_\+\+RED, below. \\
+\hline
+{\em style} & One of STYLE\+\_\+\+ON, STYLE\+\_\+\+BLINK\+\_\+\+SLOW, STYLE\+\_\+\+BLINK\+\_\+\+FAST. \\
+\hline
+{\em show\+Now} & true to show the pixel immediately, or false to wait\\
+\hline
+\end{DoxyParams}
+If you are using a Neo\+Pixel string, it may make sense to pass false to show\+Now and call \doxylink{class_status_led_r_k_a26ff86732405305af3326b7957239e15}{show()} later if you are updating multiple pixels at the same time, for example. \Hypertarget{class_status_led_r_k_aec628920b4136dbb6211cb118355f896}\label{class_status_led_r_k_aec628920b4136dbb6211cb118355f896} 
+\index{StatusLedRK@{StatusLedRK}!setOverrideStyle@{setOverrideStyle}}
+\index{setOverrideStyle@{setOverrideStyle}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{setOverrideStyle()}{setOverrideStyle()}}
+{\footnotesize\ttfamily void Status\+Led\+RK\+::set\+Override\+Style (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{n,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t}]{style,  }\item[{unsigned long}]{how\+Long,  }\item[{bool}]{clear\+On\+Change = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Temporarily override the color and style of a pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Pixel number (0 is the first pixel) \\
+\hline
+{\em color} & RGB color (uint32\+\_\+t). See constants like COLOR\+\_\+\+RED, below. \\
+\hline
+{\em style} & One of STYLE\+\_\+\+ON, STYLE\+\_\+\+BLINK\+\_\+\+SLOW, STYLE\+\_\+\+BLINK\+\_\+\+FAST. \\
+\hline
+{\em how\+Long} & How long to override the color in milliseconds. \\
+\hline
+{\em clear\+On\+Change} & If true and the color is set using set\+Color or set\+Color\+Style, the override is removed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_status_led_r_k_a7ca080c685652a8a9f1192464e4f30de}\label{class_status_led_r_k_a7ca080c685652a8a9f1192464e4f30de} 
+\index{StatusLedRK@{StatusLedRK}!setup2@{setup2}}
+\index{setup2@{setup2}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{setup2()}{setup2()}}
+{\footnotesize\ttfamily virtual void Status\+Led\+RK\+::setup2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Subclasses can override this to do setup. 
+
+Because \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()} does a number of things that are required by subclasses, the subclasses should override \doxylink{class_status_led_r_k_a7ca080c685652a8a9f1192464e4f30de}{setup2()} instead of \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()} to avoid disrupting the required calls in \doxylink{class_status_led_r_k_a3793fc1e0606f5f70d410738c2d237f9}{setup()}.
+
+For example, \doxylink{class_status_led_r_k___r_g_b}{Status\+Led\+RK\+\_\+\+RGB} uses \doxylink{class_status_led_r_k_a7ca080c685652a8a9f1192464e4f30de}{setup2()} to set the pin\+Mode of the RGB pins. 
+
+Reimplemented in \mbox{\hyperlink{class_status_led_r_k___r_g_b_a5312e083f05917377ce98143a6a913bd}{Status\+Led\+RK\+\_\+\+RGB}}.
+
+\Hypertarget{class_status_led_r_k_a26ff86732405305af3326b7957239e15}\label{class_status_led_r_k_a26ff86732405305af3326b7957239e15} 
+\index{StatusLedRK@{StatusLedRK}!show@{show}}
+\index{show@{show}!StatusLedRK@{StatusLedRK}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily virtual void Status\+Led\+RK\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the hardware to match the current pixel state. 
+
+This is only called when a pixel changes color (not continuously). This method is pure virtual and must be overridden in a subclass. 
+
+Implemented in \mbox{\hyperlink{class_status_led_r_k___r_g_b_a68cac09035e139847d036b9a3cdf9c50}{Status\+Led\+RK\+\_\+\+RGB}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Status\+Led\+RK.\+h\item 
+src/Status\+Led\+RK.\+cpp\end{DoxyCompactItemize}

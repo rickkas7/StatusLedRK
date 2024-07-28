@@ -7,12 +7,12 @@ SYSTEM_MODE(SEMI_AUTOMATIC);
 
 SerialLogHandler logHandler(LOG_LEVEL_TRACE);
 
-StatusLedRGB::LedPins ledPins[1] = {
+StatusLedRK_RGB::LedPins ledPins[1] = {
     { WKP, D3, D2 }, // red, green, blue
 };
 size_t ledPinsCount = sizeof(ledPins) / sizeof(ledPins[0]);
 
-StatusLedRGB statusLed(ledPinsCount, ledPins, true /* isCommonAnode */);
+StatusLedRK_RGB statusLed(ledPinsCount, ledPins, true /* isCommonAnode */);
 
 typedef struct {
     uint32_t color;
@@ -20,22 +20,22 @@ typedef struct {
 } ColorPair;
 
 ColorPair colorPairs[] = {
-	{ StatusLed::COLOR_BLACK, "black" },
-	{ StatusLed::COLOR_WHITE, "white" },
-	{ StatusLed::COLOR_RED, "red" },
-	{ StatusLed::COLOR_LIME, "lime" },
-	{ StatusLed::COLOR_BLUE, "blue" },
-	{ StatusLed::COLOR_YELLOW, "yellow" },
-	{ StatusLed::COLOR_CYAN, "cyan" },
-	{ StatusLed::COLOR_MAGENTA, "magenta" },
-	{ StatusLed::COLOR_SILVER, "silver" },
-	{ StatusLed::COLOR_GRAY, "gray" },
-	{ StatusLed::COLOR_MAROON, "maroon" },
-	{ StatusLed::COLOR_OLIVE, "olive" },
-	{ StatusLed::COLOR_GREEN, "green" },
-	{ StatusLed::COLOR_PURPLE, "purple" },
-	{ StatusLed::COLOR_TEAL, "teal" },
-	{ StatusLed::COLOR_NAVY, "navy" },
+	{ StatusLedRK::COLOR_BLACK, "black" },
+	{ StatusLedRK::COLOR_WHITE, "white" },
+	{ StatusLedRK::COLOR_RED, "red" },
+	{ StatusLedRK::COLOR_LIME, "lime" },
+	{ StatusLedRK::COLOR_BLUE, "blue" },
+	{ StatusLedRK::COLOR_YELLOW, "yellow" },
+	{ StatusLedRK::COLOR_CYAN, "cyan" },
+	{ StatusLedRK::COLOR_MAGENTA, "magenta" },
+	{ StatusLedRK::COLOR_SILVER, "silver" },
+	{ StatusLedRK::COLOR_GRAY, "gray" },
+	{ StatusLedRK::COLOR_MAROON, "maroon" },
+	{ StatusLedRK::COLOR_OLIVE, "olive" },
+	{ StatusLedRK::COLOR_GREEN, "green" },
+	{ StatusLedRK::COLOR_PURPLE, "purple" },
+	{ StatusLedRK::COLOR_TEAL, "teal" },
+	{ StatusLedRK::COLOR_NAVY, "navy" },
 };
 int colorPairsCount = sizeof(colorPairs) / sizeof(colorPairs[0]);
 
@@ -68,7 +68,7 @@ Test tests[] = {
     {
         "test slow blinking red",
         []() {
-            statusLed.setColorStyle(0, StatusLed::COLOR_RED, StatusLed::STYLE_BLINK_SLOW);
+            statusLed.setColorStyle(0, StatusLedRK::COLOR_RED, StatusLedRK::STYLE_BLINK_SLOW);
             testRunAfterDelay = true;        
             testTime = millis();
             testDuration = 6000;
@@ -77,7 +77,7 @@ Test tests[] = {
     {
         "test fast blinking green",
         []() {
-            statusLed.setColorStyle(0, StatusLed::COLOR_GREEN, StatusLed::STYLE_BLINK_FAST);
+            statusLed.setColorStyle(0, StatusLedRK::COLOR_GREEN, StatusLedRK::STYLE_BLINK_FAST);
             testRunAfterDelay = true;        
             testTime = millis();
             testDuration = 6000;
@@ -86,7 +86,7 @@ Test tests[] = {
     {
         "test green",
         []() {
-            statusLed.setColorStyle(0, StatusLed::COLOR_GREEN, StatusLed::STYLE_ON);
+            statusLed.setColorStyle(0, StatusLedRK::COLOR_GREEN, StatusLedRK::STYLE_ON);
             testRunAfterDelay = true;        
             testTime = millis();
             testDuration = 4000;
@@ -95,7 +95,7 @@ Test tests[] = {
     {
         "blinking red override",
         []() {
-            statusLed.setOverrideStyle(0, StatusLed::COLOR_RED, StatusLed::STYLE_BLINK_SLOW, 6000);
+            statusLed.setOverrideStyle(0, StatusLedRK::COLOR_RED, StatusLedRK::STYLE_BLINK_SLOW, 6000);
             testRunAfterDelay = true;        
             testTime = millis();
             testDuration = 6000;
@@ -113,7 +113,7 @@ Test tests[] = {
         "tests complete!",
         []() {
             if (testDuration == 0) {
-                statusLed.setColorStyle(0, StatusLed::COLOR_BLACK, StatusLed::STYLE_ON);
+                statusLed.setColorStyle(0, StatusLedRK::COLOR_BLACK, StatusLedRK::STYLE_ON);
                 testDuration = 10000;
             }
             else {

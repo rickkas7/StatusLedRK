@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7estatusledrgb_0',['~StatusLedRGB',['../class_status_led_r_g_b.html#a11cf164371a47d1a2d74169259dd0eb1',1,'StatusLedRGB']]]
+  ['_7estatusledrk_5frgb_0',['~StatusLedRK_RGB',['../class_status_led_r_k___r_g_b.html#a81fd935edb20843485e05476f377b59c',1,'StatusLedRK_RGB']]]
 ];

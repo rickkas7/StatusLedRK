@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numpixels_0',['numPixels',['../class_status_led.html#a0678c6cfa3a19f658ac854ac66a248c5',1,'StatusLed']]]
+  ['numpixels_0',['numPixels',['../class_status_led_r_k.html#a263d5dd169ff188787b763b4750d6200',1,'StatusLedRK']]]
 ];
