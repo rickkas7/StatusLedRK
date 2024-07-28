@@ -1,0 +1,34 @@
+\doxysection{Status\+Led\+::Led\+Override Struct Reference}
+\hypertarget{struct_status_led_1_1_led_override}{}\label{struct_status_led_1_1_led_override}\index{StatusLed::LedOverride@{StatusLed::LedOverride}}
+
+
+Structure used to temporarily override the status LED color.  
+
+
+
+
+{\ttfamily \#include $<$Status\+Led\+RK.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_status_led_1_1_led_override_a5694585c009fcc29e0e83c36b805a686}\label{struct_status_led_1_1_led_override_a5694585c009fcc29e0e83c36b805a686} 
+\mbox{\hyperlink{struct_status_led_1_1_pixel_state}{Pixel\+State}} {\bfseries state}
+\begin{DoxyCompactList}\small\item\em The state of the LED override (on, blinking, and color) \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_led_override_a8ec7e9420b474fc274c964450d9e6bac}\label{struct_status_led_1_1_led_override_a8ec7e9420b474fc274c964450d9e6bac} 
+unsigned long {\bfseries start\+Millis}
+\begin{DoxyCompactList}\small\item\em When the override started (millis value) \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_led_override_a7cdad648a37ea10915e03db15feef1cb}\label{struct_status_led_1_1_led_override_a7cdad648a37ea10915e03db15feef1cb} 
+unsigned long {\bfseries time\+Ms}
+\begin{DoxyCompactList}\small\item\em Duration of the override in milliseconds. \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_led_override_ab49de8598023bbb19f7f9a665ef56b01}\label{struct_status_led_1_1_led_override_ab49de8598023bbb19f7f9a665ef56b01} 
+bool {\bfseries clear\+On\+Change}
+\begin{DoxyCompactList}\small\item\em If true, if the color of the pixel is set while overridden, the override is removed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure used to temporarily override the status LED color. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Status\+Led\+RK.\+h\end{DoxyCompactItemize}

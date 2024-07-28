@@ -122,29 +122,29 @@ public:
      */
 	void setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsigned long howLong, bool clearOnChange = true);
 
-	static const uint32_t COLOR_BLACK = 0x000000;	// (0,0,0)
-	static const uint32_t COLOR_WHITE = 0xFFFFFF;	// (255,255,255)
-	static const uint32_t COLOR_RED = 0xFF0000;	// (255,0,0)
-	static const uint32_t COLOR_LIME = 0x00FF00;	// (0,255,0)
-	static const uint32_t COLOR_BLUE = 0x0000FF;	// (0,0,255)
-	static const uint32_t COLOR_YELLOW = 0xFFFF00;	// (255,255,0)
-	static const uint32_t COLOR_CYAN  = 0x00FFFF;	// (0,255,255)
-	static const uint32_t COLOR_MAGENTA  = 0xFF00FF;	// (255,0,255)
-	static const uint32_t COLOR_SILVER = 0xC0C0C0;	// (192,192,192)
-	static const uint32_t COLOR_GRAY = 0x808080;	// (128,128,128)
-	static const uint32_t COLOR_MAROON = 0x800000;	// (128,0,0)
-	static const uint32_t COLOR_OLIVE = 0x808000;	// (128,128,0)
-	static const uint32_t COLOR_GREEN = 0x008000;	// (0,128,0)
-	static const uint32_t COLOR_PURPLE = 0x800080;	// (128,0,128)
-	static const uint32_t COLOR_TEAL = 0x008080;	// (0,128,128)
-	static const uint32_t COLOR_NAVY = 0x000080;	// (0,0,128)
+	static const uint32_t COLOR_BLACK = 0x000000;	//!< Off (0,0,0)
+	static const uint32_t COLOR_WHITE = 0xFFFFFF;	//!< Fully on white (255,255,255)
+	static const uint32_t COLOR_RED = 0xFF0000;	    //!< Red (255,0,0)
+	static const uint32_t COLOR_LIME = 0x00FF00;	//!< Light green (see also LED_GREEN which is fully on) (0,255,0)
+	static const uint32_t COLOR_BLUE = 0x0000FF;	//!< Blue (0,0,255)
+	static const uint32_t COLOR_YELLOW = 0xFFFF00;	//!< Yellow (255,255,0)
+	static const uint32_t COLOR_CYAN  = 0x00FFFF;	//!< Cyan (see also LED_TEAL which is a less-bright cyan) (0,255,255)
+	static const uint32_t COLOR_MAGENTA  = 0xFF00FF;	//!< Magenta (255,0,255)
+	static const uint32_t COLOR_SILVER = 0xC0C0C0;	//!< Less bright white (192,192,192)
+	static const uint32_t COLOR_GRAY = 0x808080;	//!< Even less bright white (128,128,128)
+	static const uint32_t COLOR_MAROON = 0x800000;	//!< Less bright magenta (128,0,0)
+	static const uint32_t COLOR_OLIVE = 0x808000;	//!< Less bright yellow (128,128,0)
+	static const uint32_t COLOR_GREEN = 0x008000;	//!< Less bright than lime (0,128,0)
+	static const uint32_t COLOR_PURPLE = 0x800080;	//!< Less bright than magenta (128,0,128)
+	static const uint32_t COLOR_TEAL = 0x008080;	//!< Less bright than cyan (0,128,128)
+	static const uint32_t COLOR_NAVY = 0x000080;	//!< Less bright than blue (0,0,128)
 
-	static const uint8_t STYLE_ON = 0;
-	static const uint8_t STYLE_BLINK_SLOW = 1;
-	static const uint8_t STYLE_BLINK_FAST = 2;
+	static const uint8_t STYLE_ON = 0; //!< On solid
+	static const uint8_t STYLE_BLINK_SLOW = 1; //!< Slowly blinking (1/2 Hz, 1000 ms per state) 
+	static const uint8_t STYLE_BLINK_FAST = 2; //!< Fast blinking (2 Hz, 250 ms per state)
 
-    static const unsigned long FAST_BLINK_MS = 250;
-    static const unsigned long SLOW_BLINK_MS = 1000;
+    static const unsigned long FAST_BLINK_MS = 250; //!< Milliseconds for STYLE_BLINK_FAST
+    static const unsigned long SLOW_BLINK_MS = 1000; //!< Milliseconds for STYLE_BLINK_SLOW
 
 
 protected:
