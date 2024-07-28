@@ -50,7 +50,6 @@ typedef struct {
 } Test;
 
 Test tests[] = {
-#if 0    
     {
         "solid colors",
         []() {
@@ -66,7 +65,6 @@ Test tests[] = {
             testDuration = 4000;
         },
     },
-#endif
     {
         "test slow blinking red",
         []() {
