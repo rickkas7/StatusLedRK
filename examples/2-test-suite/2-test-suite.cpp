@@ -50,12 +50,13 @@ typedef struct {
 } Test;
 
 Test tests[] = {
+#if 0    
     {
         "solid colors",
         []() {
             static int colorIndex = 0;
 
-            Log.info("setColor %s", colorPairs[colorIndex].name);
+            Log.trace("setColor %s", colorPairs[colorIndex].name);
             statusLed.setColor(0, colorPairs[colorIndex].color);
             if (++colorIndex >= colorPairsCount) {
                 colorIndex = 0;
@@ -65,6 +66,7 @@ Test tests[] = {
             testDuration = 4000;
         },
     },
+#endif
     {
         "test slow blinking red",
         []() {
@@ -89,16 +91,24 @@ Test tests[] = {
             statusLed.setColorStyle(0, StatusLed::COLOR_GREEN, StatusLed::STYLE_ON);
             testRunAfterDelay = true;        
             testTime = millis();
-            testDuration = 2000;
+            testDuration = 4000;
         }
     },
     {
         "blinking red override",
         []() {
-            statusLed.setOverrideStyle(0, StatusLed::COLOR_RED, StatusLed::STYLE_BLINK_SLOW, 4000);
+            statusLed.setOverrideStyle(0, StatusLed::COLOR_RED, StatusLed::STYLE_BLINK_SLOW, 6000);
             testRunAfterDelay = true;        
             testTime = millis();
-            testDuration = 8000;
+            testDuration = 6000;
+        }
+    },
+    {
+        "should revert to green",
+        []() {
+            testRunAfterDelay = true;        
+            testTime = millis();
+            testDuration = 4000;
         }
     },
     {

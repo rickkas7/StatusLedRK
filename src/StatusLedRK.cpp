@@ -42,18 +42,27 @@ void StatusLed::loop() {
         }
 
         for(size_t ii = 0; ii < numPixels; ii++) {
-            if (state[ii].style == STYLE_BLINK_SLOW) {
-                if (millis() - state[ii].lastTime >= SLOW_BLINK_MS) {
-                    state[ii].lastTime = millis();
-                    state[ii].blinkState = !state[ii].blinkState;
+            PixelState *pixelState;
+
+            if (overrides[ii].timeMs > 0) {
+                pixelState = &overrides[ii].state;
+            }
+            else {
+                pixelState = &state[ii];
+            }
+            
+            if (pixelState->style == STYLE_BLINK_SLOW) {
+                if (millis() - pixelState->lastTime >= SLOW_BLINK_MS) {
+                    pixelState->lastTime = millis();
+                    pixelState->blinkState = !pixelState->blinkState;
                     doShow = true;
                 }
             }
             else
-            if (state[ii].style == STYLE_BLINK_FAST) {
-                if (millis() - state[ii].lastTime >= FAST_BLINK_MS) {
-                    state[ii].lastTime = millis();
-                    state[ii].blinkState = !state[ii].blinkState;
+            if (pixelState->style == STYLE_BLINK_FAST) {
+                if (millis() - pixelState->lastTime >= FAST_BLINK_MS) {
+                    pixelState->lastTime = millis();
+                    pixelState->blinkState = !pixelState->blinkState;
                     doShow = true;
                 }
             }
@@ -119,7 +128,10 @@ void StatusLed::setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsi
     overrides[n].timeMs = howLong;
     overrides[n].state.color = color;
     overrides[n].state.style = style;
+    overrides[n].state.lastTime = 0;
+    overrides[n].state.blinkState = false;
     overrides[n].clearOnChange = clearOnChange;
+
     updateLoopCheckEnabled();
 
     show();
