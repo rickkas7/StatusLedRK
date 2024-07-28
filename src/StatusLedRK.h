@@ -1,6 +1,8 @@
 #ifndef __STATUSLED_RK_H
 #define __STATUSLED_RK_H
 
+// Github: https://github.com/rickkas7/StatusLedRK
+// License: MIT
 
 #include "Particle.h"
 
@@ -223,6 +225,43 @@ protected:
     const LedPins *pinsArray; //!< Definition of the GPIO used for the RGB LED PWM pins
     bool isCommonAnode = true;  //!< true for common anode (common pin connected to VCC) or false for common cathode (common pin connected to GND)
 };
+
+#ifdef PARTICLE_NEOPIXEL_H
+// Library: neopixel
+// https://github.com/technobly/Particle-NeoPixel
+
+class StatusLedRK_Neopixel : public StatusLedRK {
+public:
+    /**
+     * @brief Construct a new StatusLedRK_StatusLedRK_NeopixelRGB object
+     * 
+     * @param strip 
+     */
+	StatusLedRK_Neopixel(Adafruit_NeoPixel *strip) : StatusLedRK(strip->numPixels()), strip(strip) {
+    }
+
+    /**
+     * @brief Destructor
+     */
+	virtual ~StatusLedRK_Neopixel() {        
+    }
+
+    /**
+     * @brief Update the Neopixel strip to match the state in the StatusLedRK object
+     */
+	virtual void show() {
+        for(uint16_t ii = 0; ii < strip->numPixels(); ii++) {
+            strip->setPixelColor(ii, getColorWithOverride(ii));
+        }
+        strip->show();
+    }
+
+
+protected:
+	Adafruit_NeoPixel *strip = nullptr;
+};
+
+#endif // PARTICLE_NEOPIXEL_H
 
 
 #endif // __STATUSLED_RK_H
