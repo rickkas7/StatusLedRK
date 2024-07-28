@@ -1,0 +1,34 @@
+\doxysection{Status\+Led\+::Pixel\+State Struct Reference}
+\hypertarget{struct_status_led_1_1_pixel_state}{}\label{struct_status_led_1_1_pixel_state}\index{StatusLed::PixelState@{StatusLed::PixelState}}
+
+
+Structure that keeps the state of a pixel.  
+
+
+
+
+{\ttfamily \#include $<$Status\+Led\+RK.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_status_led_1_1_pixel_state_a1770c6ba45a8a387af049ddf40f7222f}\label{struct_status_led_1_1_pixel_state_a1770c6ba45a8a387af049ddf40f7222f} 
+uint32\+\_\+t {\bfseries color}
+\begin{DoxyCompactList}\small\item\em Color of the pixel. \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_pixel_state_ae2a9695f9f487f583b470d608eae34ac}\label{struct_status_led_1_1_pixel_state_ae2a9695f9f487f583b470d608eae34ac} 
+uint8\+\_\+t {\bfseries style}
+\begin{DoxyCompactList}\small\item\em Style (on, blink slow, blink fast). See STYLE\+\_\+ constants below. \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_pixel_state_a1fbc5e954327ec72b534b24782156e89}\label{struct_status_led_1_1_pixel_state_a1fbc5e954327ec72b534b24782156e89} 
+uint32\+\_\+t {\bfseries last\+Time}
+\begin{DoxyCompactList}\small\item\em Last state change millis(), used when blinking. \end{DoxyCompactList}\item 
+\Hypertarget{struct_status_led_1_1_pixel_state_a51986341e37854a58633f2bc8be53196}\label{struct_status_led_1_1_pixel_state_a51986341e37854a58633f2bc8be53196} 
+bool {\bfseries blink\+State}
+\begin{DoxyCompactList}\small\item\em Whether the blink is on (true) or off (false) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure that keeps the state of a pixel. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/Status\+Led\+RK.\+h\end{DoxyCompactItemize}

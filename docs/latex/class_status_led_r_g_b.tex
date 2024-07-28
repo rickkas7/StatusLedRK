@@ -1,0 +1,190 @@
+\doxysection{Status\+Led\+RGB Class Reference}
+\hypertarget{class_status_led_r_g_b}{}\label{class_status_led_r_g_b}\index{StatusLedRGB@{StatusLedRGB}}
+
+
+Class for status LED connected to PWM pins.  
+
+
+
+
+{\ttfamily \#include $<$Status\+Led\+RK.\+h$>$}
+
+Inheritance diagram for Status\+Led\+RGB\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_status_led_r_g_b}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{Led\+Pins}}
+\begin{DoxyCompactList}\small\item\em Structure that defines the pins used for red, green, and blue of an RGB LED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_status_led_r_g_b_a5fefc74223ed7d946d73a3f587eda6e0}{Status\+Led\+RGB}} (size\+\_\+t \mbox{\hyperlink{class_status_led_a0678c6cfa3a19f658ac854ac66a248c5}{num\+Pixels}}, const \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{Led\+Pins}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_status_led_r_g_b_a09cd7217d077c5b395801a4c4f1f144f}{pins\+Array}}, bool \mbox{\hyperlink{class_status_led_r_g_b_a58c6e94bc49079704bc5462caad291a0}{is\+Common\+Anode}}=true)
+\begin{DoxyCompactList}\small\item\em Construct a new Status Led object. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_g_b_a11cf164371a47d1a2d74169259dd0eb1}\label{class_status_led_r_g_b_a11cf164371a47d1a2d74169259dd0eb1} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Status\+Led\+RGB} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_r_g_b_a93eacf87226dd3d35364ee507690a325}{setup2}} ()
+\begin{DoxyCompactList}\small\item\em Sets the pin\+Mode of the LED pins. Called from \doxylink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup()}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_r_g_b_ae3dcaa6a5a42d383da24192a1e252ff4}{show}} ()
+\begin{DoxyCompactList}\small\item\em Update the RGB LED to match the state in the \doxylink{class_status_led}{Status\+Led} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_status_led}{Status\+Led}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_status_led_a0d8f7a163a86e3969df72ce702d7588f}{Status\+Led}} (size\+\_\+t \mbox{\hyperlink{class_status_led_a0678c6cfa3a19f658ac854ac66a248c5}{num\+Pixels}})
+\begin{DoxyCompactList}\small\item\em Constructor of the base class. \end{DoxyCompactList}\item 
+virtual void {\bfseries setup} ()
+\begin{DoxyCompactList}\small\item\em This must be called from application \doxylink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup()}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_status_led_a43338f0b544bdaccae19bfde59139c4c}{loop}} ()
+\begin{DoxyCompactList}\small\item\em This must be called from application \doxylink{class_status_led_a43338f0b544bdaccae19bfde59139c4c}{loop()}. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_status_led_adf7b9c5bd18e2c1d8be96ead4a308d2c}{get\+Color\+With\+Override}} (uint16\+\_\+t n)
+\begin{DoxyCompactList}\small\item\em Get the color of the specified pixel, taking into account overrides. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_ae4cf3fa9a9273203525717aee802d06c}{set\+Color}} (uint16\+\_\+t n, uint32\+\_\+t color, bool show\+Now=true)
+\begin{DoxyCompactList}\small\item\em Set the color of a pixel (solid color, not blinking) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_ad98bea4f2029b2fa68cbbc64eb7f8c9c}{set\+Color\+Style}} (uint16\+\_\+t n, uint32\+\_\+t color, uint8\+\_\+t style, bool show\+Now=true)
+\begin{DoxyCompactList}\small\item\em Set the color and style of a pixel. This can be used for solid or blinking colors. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_status_led_a343cce8976b4616ff437603be0cadc38}{set\+Override\+Style}} (uint16\+\_\+t n, uint32\+\_\+t color, uint8\+\_\+t style, unsigned long how\+Long, bool clear\+On\+Change=true)
+\begin{DoxyCompactList}\small\item\em Temporarily override the color and style of a pixel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_status_led_r_g_b_a09cd7217d077c5b395801a4c4f1f144f}\label{class_status_led_r_g_b_a09cd7217d077c5b395801a4c4f1f144f} 
+const \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{Led\+Pins}} \texorpdfstring{$\ast$}{*} {\bfseries pins\+Array}
+\begin{DoxyCompactList}\small\item\em Definition of the GPIO used for the RGB LED PWM pins. \end{DoxyCompactList}\item 
+\Hypertarget{class_status_led_r_g_b_a58c6e94bc49079704bc5462caad291a0}\label{class_status_led_r_g_b_a58c6e94bc49079704bc5462caad291a0} 
+bool {\bfseries is\+Common\+Anode} = true
+\begin{DoxyCompactList}\small\item\em true for common anode (common pin connected to VCC) or false for common cathode (common pin connected to GND) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_status_led}{Status\+Led}}}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t {\bfseries num\+Pixels} = 0
+\begin{DoxyCompactList}\small\item\em Number of pixels, set during construction. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_led_1_1_pixel_state}{Pixel\+State}} \texorpdfstring{$\ast$}{*} {\bfseries state} = 0
+\begin{DoxyCompactList}\small\item\em Array of \doxylink{struct_status_led_1_1_pixel_state}{Pixel\+State} structures, one per pixel. Allocated during \doxylink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup()}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_status_led_1_1_led_override}{Led\+Override}} \texorpdfstring{$\ast$}{*} {\bfseries overrides} = 0
+\begin{DoxyCompactList}\small\item\em Array of \doxylink{struct_status_led_1_1_led_override}{Led\+Override} structures, one per pixels. Allocated during \doxylink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup()}. \end{DoxyCompactList}\item 
+bool {\bfseries loop\+Check\+Enabled} = false
+\begin{DoxyCompactList}\small\item\em Internal flag used to determine whether the pixels should be checked on calls to loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_status_led}{Status\+Led}}}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+BLACK} = 0x000000
+\begin{DoxyCompactList}\small\item\em Off (0,0,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+WHITE} = 0x\+FFFFFF
+\begin{DoxyCompactList}\small\item\em Fully on white (255,255,255) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+RED} = 0x\+FF0000
+\begin{DoxyCompactList}\small\item\em Red (255,0,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+LIME} = 0x00\+FF00
+\begin{DoxyCompactList}\small\item\em Light green (see also LED\+\_\+\+GREEN which is fully on) (0,255,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+BLUE} = 0x0000\+FF
+\begin{DoxyCompactList}\small\item\em Blue (0,0,255) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+YELLOW} = 0x\+FFFF00
+\begin{DoxyCompactList}\small\item\em Yellow (255,255,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+CYAN} = 0x00\+FFFF
+\begin{DoxyCompactList}\small\item\em Cyan (see also LED\+\_\+\+TEAL which is a less-\/bright cyan) (0,255,255) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+MAGENTA} = 0x\+FF00\+FF
+\begin{DoxyCompactList}\small\item\em Magenta (255,0,255) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+SILVER} = 0x\+C0\+C0\+C0
+\begin{DoxyCompactList}\small\item\em Less bright white (192,192,192) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+GRAY} = 0x808080
+\begin{DoxyCompactList}\small\item\em Even less bright white (128,128,128) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+MAROON} = 0x800000
+\begin{DoxyCompactList}\small\item\em Less bright magenta (128,0,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+OLIVE} = 0x808000
+\begin{DoxyCompactList}\small\item\em Less bright yellow (128,128,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+GREEN} = 0x008000
+\begin{DoxyCompactList}\small\item\em Less bright than lime (0,128,0) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+PURPLE} = 0x800080
+\begin{DoxyCompactList}\small\item\em Less bright than magenta (128,0,128) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+TEAL} = 0x008080
+\begin{DoxyCompactList}\small\item\em Less bright than cyan (0,128,128) \end{DoxyCompactList}\item 
+static const uint32\+\_\+t {\bfseries COLOR\+\_\+\+NAVY} = 0x000080
+\begin{DoxyCompactList}\small\item\em Less bright than blue (0,0,128) \end{DoxyCompactList}\item 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+ON} = 0
+\begin{DoxyCompactList}\small\item\em On solid. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+BLINK\+\_\+\+SLOW} = 1
+\begin{DoxyCompactList}\small\item\em Slowly blinking (1/2 Hz, 1000 ms per state) \end{DoxyCompactList}\item 
+static const uint8\+\_\+t {\bfseries STYLE\+\_\+\+BLINK\+\_\+\+FAST} = 2
+\begin{DoxyCompactList}\small\item\em Fast blinking (2 Hz, 250 ms per state) \end{DoxyCompactList}\item 
+static const unsigned long {\bfseries FAST\+\_\+\+BLINK\+\_\+\+MS} = 250
+\begin{DoxyCompactList}\small\item\em Milliseconds for STYLE\+\_\+\+BLINK\+\_\+\+FAST. \end{DoxyCompactList}\item 
+static const unsigned long {\bfseries SLOW\+\_\+\+BLINK\+\_\+\+MS} = 1000
+\begin{DoxyCompactList}\small\item\em Milliseconds for STYLE\+\_\+\+BLINK\+\_\+\+SLOW. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_status_led}{Status\+Led}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_status_led_af2e78997dafa993192b8cf90cbf6f984}{check\+For\+Override\+Change}} ()
+\begin{DoxyCompactList}\small\item\em Used internally to see if there is an override change and the pixels need to be updated. \end{DoxyCompactList}\item 
+void {\bfseries update\+Loop\+Check\+Enabled} ()
+\begin{DoxyCompactList}\small\item\em Used internally to update the loop\+Check\+Enabled flag. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_status_led_aa695c1ba16725f420b0593476875e599}{Status\+Led}} (const \mbox{\hyperlink{class_status_led}{Status\+Led}} \&)=delete
+\item 
+\mbox{\hyperlink{class_status_led}{Status\+Led}} \& \mbox{\hyperlink{class_status_led_a5a526ffe4162669d11a2cf7609a3fbaf}{operator=}} (const \mbox{\hyperlink{class_status_led}{Status\+Led}} \&)=delete
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for status LED connected to PWM pins. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_status_led_r_g_b_a5fefc74223ed7d946d73a3f587eda6e0}\label{class_status_led_r_g_b_a5fefc74223ed7d946d73a3f587eda6e0} 
+\index{StatusLedRGB@{StatusLedRGB}!StatusLedRGB@{StatusLedRGB}}
+\index{StatusLedRGB@{StatusLedRGB}!StatusLedRGB@{StatusLedRGB}}
+\doxysubsubsection{\texorpdfstring{StatusLedRGB()}{StatusLedRGB()}}
+{\footnotesize\ttfamily Status\+Led\+RGB\+::\+Status\+Led\+RGB (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{num\+Pixels,  }\item[{const \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{Led\+Pins}} \texorpdfstring{$\ast$}{*}}]{pins\+Array,  }\item[{bool}]{is\+Common\+Anode = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Construct a new Status Led object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Pixels} & Number of entries in pins\+Array \\
+\hline
+{\em pins\+Array} & The pins\+Array is typically a const global structure. This is not copied! \\
+\hline
+{\em is\+Common\+Anode} & true for common anode (common pin connected to VCC) or false for common cathode (common pin connected to GND) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_status_led_r_g_b_a93eacf87226dd3d35364ee507690a325}\label{class_status_led_r_g_b_a93eacf87226dd3d35364ee507690a325} 
+\index{StatusLedRGB@{StatusLedRGB}!setup2@{setup2}}
+\index{setup2@{setup2}!StatusLedRGB@{StatusLedRGB}}
+\doxysubsubsection{\texorpdfstring{setup2()}{setup2()}}
+{\footnotesize\ttfamily void Status\+Led\+RGB\+::setup2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the pin\+Mode of the LED pins. Called from \doxylink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup()}. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_status_led_a83dc7345b43e1b19f63abd4993009eae}{Status\+Led}}.
+
+\Hypertarget{class_status_led_r_g_b_ae3dcaa6a5a42d383da24192a1e252ff4}\label{class_status_led_r_g_b_ae3dcaa6a5a42d383da24192a1e252ff4} 
+\index{StatusLedRGB@{StatusLedRGB}!show@{show}}
+\index{show@{show}!StatusLedRGB@{StatusLedRGB}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Status\+Led\+RGB\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update the RGB LED to match the state in the \doxylink{class_status_led}{Status\+Led} object. 
+
+
+
+Implements \mbox{\hyperlink{class_status_led_a89994361e2dfd6926a1bc6adc97c988b}{Status\+Led}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/Status\+Led\+RK.\+h\item 
+src/Status\+Led\+RK.\+cpp\end{DoxyCompactItemize}

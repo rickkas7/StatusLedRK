@@ -1,0 +1,116 @@
+\doxysection{Status\+Led\+RK.\+h}
+\hypertarget{_status_led_r_k_8h_source}{}\label{_status_led_r_k_8h_source}\index{src/StatusLedRK.h@{src/StatusLedRK.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_STATUSLED\_RK\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_STATUSLED\_RK\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}Particle.h"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_status_led}{StatusLed}}\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_status_led_1_1_pixel_state_a1770c6ba45a8a387af049ddf40f7222f}{color}};\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{struct_status_led_1_1_pixel_state_ae2a9695f9f487f583b470d608eae34ac}{style}};\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ uint32\_t\ \mbox{\hyperlink{struct_status_led_1_1_pixel_state_a1fbc5e954327ec72b534b24782156e89}{lastTime}};\ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_status_led_1_1_pixel_state_a51986341e37854a58633f2bc8be53196}{blinkState}};\ }
+\DoxyCodeLine{00024\ \ \ \ \ \}\ \mbox{\hyperlink{struct_status_led_1_1_pixel_state}{PixelState}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_status_led_1_1_pixel_state}{PixelState}}\ \mbox{\hyperlink{struct_status_led_1_1_led_override_a5694585c009fcc29e0e83c36b805a686}{state}};\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_status_led_1_1_led_override_a8ec7e9420b474fc274c964450d9e6bac}{startMillis}};\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_status_led_1_1_led_override_a7cdad648a37ea10915e03db15feef1cb}{timeMs}};\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_status_led_1_1_led_override_ab49de8598023bbb19f7f9a665ef56b01}{clearOnChange}};\ }
+\DoxyCodeLine{00034\ \ \ \ \ \}\ \mbox{\hyperlink{struct_status_led_1_1_led_override}{LedOverride}};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_status_led_a0d8f7a163a86e3969df72ce702d7588f}{StatusLed}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_status_led_a0678c6cfa3a19f658ac854ac66a248c5}{numPixels}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_status_led}{\string~StatusLed}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a6912a0677df3003a7284190a0f339c77}{setup}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a43338f0b544bdaccae19bfde59139c4c}{loop}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a89994361e2dfd6926a1bc6adc97c988b}{show}}()\ =\ 0;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a83dc7345b43e1b19f63abd4993009eae}{setup2}}()\ \{\};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00087\ \ \ \ \ uint32\_t\ \mbox{\hyperlink{class_status_led_adf7b9c5bd18e2c1d8be96ead4a308d2c}{getColorWithOverride}}(uint16\_t\ n);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_ae4cf3fa9a9273203525717aee802d06c}{setColor}}(uint16\_t\ n,\ uint32\_t\ color,\ \textcolor{keywordtype}{bool}\ showNow\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_ad98bea4f2029b2fa68cbbc64eb7f8c9c}{setColorStyle}}(uint16\_t\ n,\ uint32\_t\ color,\ uint8\_t\ style,\ \textcolor{keywordtype}{bool}\ showNow\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a343cce8976b4616ff437603be0cadc38}{setOverrideStyle}}(uint16\_t\ n,\ uint32\_t\ color,\ uint8\_t\ style,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ howLong,\ \textcolor{keywordtype}{bool}\ clearOnChange\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a084fad56af82c69ef411bd8399799afe}{COLOR\_BLACK}}\ =\ 0x000000;\ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_afe4d325c8708b29e11d1c7cbcc229a8b}{COLOR\_WHITE}}\ =\ 0xFFFFFF;\ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a7b2edfde553d5b7fd733679a81918957}{COLOR\_RED}}\ =\ 0xFF0000;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a709b861c829cc73a60e8761148dc61e7}{COLOR\_LIME}}\ =\ 0x00FF00;\ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a04d1ea91790b38b6ee1ed643b2d76b32}{COLOR\_BLUE}}\ =\ 0x0000FF;\ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a5d543e52c6c13a4510969ae40e9dce1f}{COLOR\_YELLOW}}\ =\ 0xFFFF00;\ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_aeaae031c5361ba06f0a7a9107df4a4ff}{COLOR\_CYAN}}\ \ =\ 0x00FFFF;\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a9472822646829b45518a9c5e75fff386}{COLOR\_MAGENTA}}\ \ =\ 0xFF00FF;\ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a06b58db30dd57391c3e76b5abd35e417}{COLOR\_SILVER}}\ =\ 0xC0C0C0;\ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a6b74cf58c6f92230db0861f357a74680}{COLOR\_GRAY}}\ =\ 0x808080;\ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a92652114615bac41b362b5c09ed787ed}{COLOR\_MAROON}}\ =\ 0x800000;\ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a783cb10631a0e937a41ec8b184565efb}{COLOR\_OLIVE}}\ =\ 0x808000;\ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_af32ff837e1680e438bad0d10b7c54370}{COLOR\_GREEN}}\ =\ 0x008000;\ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a54bebd61a934c2ea9b4c2fabe0c6e084}{COLOR\_PURPLE}}\ =\ 0x800080;\ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_a5aeb4637c9b16e9e2e0476b23eb7c4f3}{COLOR\_TEAL}}\ =\ 0x008080;\ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint32\_t\ \mbox{\hyperlink{class_status_led_ac7265ec349593d8c7cdad97e5db9b346}{COLOR\_NAVY}}\ =\ 0x000080;\ \ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{class_status_led_ac5839c0a25a1b4bba120ef5d3e46ff15}{STYLE\_ON}}\ =\ 0;\ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{class_status_led_a12ac26c4c6096a1f0b63c4b01a136792}{STYLE\_BLINK\_SLOW}}\ =\ 1;\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ uint8\_t\ \mbox{\hyperlink{class_status_led_a92fa43e66dc68bcbf9ad36a9dbc6e921}{STYLE\_BLINK\_FAST}}\ =\ 2;\ }
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_status_led_a45f1d2667ab8fae9b28bb5ee8bf0ac08}{FAST\_BLINK\_MS}}\ =\ 250;\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{class_status_led_ae4dffdaa97e0d650ceef46a5c84542f5}{SLOW\_BLINK\_MS}}\ =\ 1000;\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_status_led_af2e78997dafa993192b8cf90cbf6f984}{checkForOverrideChange}}();}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_a3e78f476c7c44005d12f527b6c1b583f}{updateLoopCheckEnabled}}();}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{class_status_led_aa695c1ba16725f420b0593476875e599}{StatusLed}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_status_led}{StatusLed}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_status_led}{StatusLed}}\&\ \mbox{\hyperlink{class_status_led_a5a526ffe4162669d11a2cf7609a3fbaf}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_status_led}{StatusLed}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_status_led_a0678c6cfa3a19f658ac854ac66a248c5}{numPixels}}\ =\ 0;\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{struct_status_led_1_1_pixel_state}{PixelState}}\ *\mbox{\hyperlink{class_status_led_ac5656ce555e77922ed7ce430b3c38435}{state}}\ =\ 0;\ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{struct_status_led_1_1_led_override}{LedOverride}}\ *\mbox{\hyperlink{class_status_led_ac06a4f67f91f1f3010099226e84d52b0}{overrides}}\ =\ 0;\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_status_led_a7bd287a5390129a603d9186c68b8a392}{loopCheckEnabled}}\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_status_led_r_g_b}{StatusLedRGB}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_status_led}{StatusLed}}\ \{}
+\DoxyCodeLine{00186\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ pin\_t\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins_a5b08e769f7b6d44932a3382719a71a19}{rPin}};\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ pin\_t\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins_a485ec70c6b945a52f7c13f207b98df89}{gPin}};\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ pin\_t\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins_afdbc8844211d4cc84ff9e5c3e7e851d0}{bPin}};\ }
+\DoxyCodeLine{00194\ \ \ \ \ \}\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{LedPins}};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{class_status_led_r_g_b_a5fefc74223ed7d946d73a3f587eda6e0}{StatusLedRGB}}(\textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{class_status_led_a0678c6cfa3a19f658ac854ac66a248c5}{numPixels}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{LedPins}}\ *\mbox{\hyperlink{class_status_led_r_g_b_a09cd7217d077c5b395801a4c4f1f144f}{pinsArray}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_status_led_r_g_b_a58c6e94bc49079704bc5462caad291a0}{isCommonAnode}}\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_status_led_r_g_b_a11cf164371a47d1a2d74169259dd0eb1}{\string~StatusLedRGB}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_r_g_b_a93eacf87226dd3d35364ee507690a325}{setup2}}();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_status_led_r_g_b_ae3dcaa6a5a42d383da24192a1e252ff4}{show}}();}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_status_led_r_g_b_1_1_led_pins}{LedPins}}\ *\mbox{\hyperlink{class_status_led_r_g_b_a09cd7217d077c5b395801a4c4f1f144f}{pinsArray}};\ }
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_status_led_r_g_b_a58c6e94bc49079704bc5462caad291a0}{isCommonAnode}}\ =\ \textcolor{keyword}{true};\ \ }
+\DoxyCodeLine{00225\ \};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_STATUSLED\_RK\_H}}
+
+\end{DoxyCode}
