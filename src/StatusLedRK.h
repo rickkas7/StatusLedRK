@@ -124,6 +124,13 @@ public:
      */
 	void setOverrideStyle(uint16_t n, uint32_t color, uint8_t style, unsigned long howLong, bool clearOnChange = true);
 
+    /**
+     * @brief Get the number of pixels in the strip
+     * 
+     * @return size_t 
+     */
+    size_t getNumPixels() const { return numPixels; };
+
 	static const uint32_t COLOR_BLACK = 0x000000;	//!< Off (0,0,0)
 	static const uint32_t COLOR_WHITE = 0xFFFFFF;	//!< Fully on white (255,255,255)
 	static const uint32_t COLOR_RED = 0xFF0000;	    //!< Red (255,0,0)
@@ -262,6 +269,39 @@ protected:
 };
 
 #endif // PARTICLE_NEOPIXEL_H
+
+#ifdef __PCA9531_RK
+class StatusLedRK_PCA9531 : public StatusLedRK {
+public:
+    /**
+     * @brief Construct a new StatusLedRK_StatusLedRK_NeopixelRGB object
+     * 
+     * @param strip 
+     */
+	StatusLedRK_PCA9531(PCA9531 *strip) : StatusLedRK(PCA9531::MAX_LED), strip(strip) {
+    }
+
+    /**
+     * @brief Destructor
+     */
+	virtual ~StatusLedRK_PCA9531() {        
+    }
+
+    /**
+     * @brief Update the strip to match the state in the StatusLedRK object
+     */
+	virtual void show() {
+        for(uint16_t ii = 0; ii < getNumPixels(); ii++) {
+            strip->setLed(ii, getColorWithOverride(ii), false);
+        }
+        strip->updateLeds();
+    }
+
+
+protected:
+	PCA9531 *strip = nullptr;
+};
+#endif // __PCA9531_RK
 
 
 #endif // __STATUSLED_RK_H
